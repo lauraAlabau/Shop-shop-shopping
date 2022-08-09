@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 import { FC } from "react";
-import { Navbar } from "../ui";
+import { Navbar, SideMenu } from "../ui";
 
 import styles from "./ShopLayout.module.css";
 
@@ -39,7 +39,7 @@ export const ShopLayout: FC<Props> = ({
         <Navbar />
       </nav>
 
-      {/* TODO: Sidebar */}
+      <SideMenu/>
 
       <main className={styles.shop_layout_main}>{children}</main>
 
