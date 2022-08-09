@@ -1,6 +1,8 @@
 import { ShopLayout } from "../../components/layout/ShopLayout";
 import { initialData } from "../../database/products";
 import { Box, Button, Chip, Grid, Typography } from "@mui/material";
+import { ProductSlideshow } from "../../components/products";
+import 'react-slideshow-image/dist/styles.css'
 
 const product = initialData.products[0];
 
@@ -9,7 +11,7 @@ const ProductPage = () => {
     <ShopLayout title={product.title} pageDescription={product.description}>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={7}>
-          {/* TODO: Add slideshow */}
+          <ProductSlideshow images={ product.images } />
         </Grid>
 
         <Grid item xs={12} sm={5}>
