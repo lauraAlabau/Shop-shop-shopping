@@ -1,8 +1,9 @@
 import { ShopLayout } from "../../components/layout/ShopLayout";
 import { initialData } from "../../database/products";
 import { Box, Button, Chip, Grid, Typography } from "@mui/material";
-import { ProductSlideshow } from "../../components/products";
+import { ProductSlideshow, SizeSelector } from "../../components/products";
 import 'react-slideshow-image/dist/styles.css'
+import { ItemCounter } from "../../components/ui";
 
 const product = initialData.products[0];
 
@@ -28,7 +29,8 @@ const ProductPage = () => {
             {/* TODO: Add amount */}
             <Box sx={{ my: 2 }}>
               <Typography variant="subtitle2">Cantidad</Typography>
-              {/* TODO: ItemCounter */}
+              <ItemCounter/>
+              <SizeSelector sizes={ product.sizes } />
             </Box>
 
             {/* TODO: Add in Cart */}
@@ -36,7 +38,7 @@ const ProductPage = () => {
               Añadir al carrito
             </Button>
 
-            <Chip label="No hay disponibles" color="error" variant="outlined" />
+          {/*   <Chip label="No hay disponibles" color="error" variant="outlined" /> */}
 
             {/* Descripción */}
             <Box sx={{ mt: 3 }}>
