@@ -15,7 +15,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     await db.connect()
     await Product.deleteMany()
     await Product.insertMany( seedDatabase.initialData.products )
-
     await db.disconnect()
 
     res.status(200).json({ message: 'Proceso realizado correctamente' })

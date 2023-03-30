@@ -4,10 +4,14 @@ import { Box, Button, Chip, Grid, Typography } from "@mui/material";
 import { ProductSlideshow, SizeSelector } from "../../components/products";
 import 'react-slideshow-image/dist/styles.css'
 import { ItemCounter } from "../../components/ui";
+import { useRouter } from "next/router";
 
 const product = initialData.products[0];
 
 const ProductPage = () => {
+
+  const router = useRouter();
+
   return (
     <ShopLayout title={product.title} pageDescription={product.description}>
       <Grid container spacing={3}>

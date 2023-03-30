@@ -11,7 +11,17 @@ import { ProductList } from "../components/products";
 
 import { initialData } from "../database/products";
 
+import useSWR from 'swr'
+
+const fetcher = (...args: [key: string]) => fetch(...args).then((res) => res.json())
+
 const Home: NextPage = () => {
+
+  const { data, error } = useSWR('/api/products', fetcher)
+
+  if (error) return <div>Failed to load</div>
+  if (!data) return <div>Loading...</div>
+
   return (
     <ShopLayout
       title={"My Shop - Home"}
